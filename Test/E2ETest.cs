@@ -3,10 +3,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Test
 {
     [TestClass]
-    public class UnitTest1
+    public class E2ETest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void GivenSimpleSvg_ShouldOptimizeUsingDefaults()
         {
         }
     }
