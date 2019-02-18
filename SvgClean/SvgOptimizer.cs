@@ -35,6 +35,7 @@ namespace SvgClean
             return new IWork[]
             {
                 new RemoveNewLines(),
+                new TrimAttributes(),
                 new TrimSpaces(),
             };
         }
