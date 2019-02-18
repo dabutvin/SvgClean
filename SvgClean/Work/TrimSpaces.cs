@@ -6,6 +6,7 @@ namespace SvgClean.Work
     // Trim from the outer edges
     // 0 spaces between angle brackets
     // 1 space between words
+    // 0 spaces between attributes and angle brackets
 
     internal class TrimSpaces : IWork
     {
@@ -13,6 +14,7 @@ namespace SvgClean.Work
         {
             var result = Regex.Replace(input, @"[\s]+", " ", RegexOptions.Compiled);
             result = Regex.Replace(result, @"(?<=>)[\s]+", "", RegexOptions.Compiled);
+            result = Regex.Replace(result, @"\s+(?=\/>|>)", "", RegexOptions.Compiled);
             return result.Trim();
         }
     }
