@@ -1,6 +1,6 @@
 namespace SvgClean.Work
 {
-    public interface IWork
+    internal interface IWork
     {
         string Work(string input);
     }

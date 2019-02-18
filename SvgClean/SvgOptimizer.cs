@@ -1,7 +1,10 @@
-﻿using System;
+﻿using System.Runtime.CompilerServices;
+using System;
 using System.IO;
 using System.Linq;
 using SvgClean.Work;
+
+[assembly: InternalsVisibleTo("Test")]
 
 namespace SvgClean
 {
@@ -29,9 +32,10 @@ namespace SvgClean
 
         private IWork[] GetWorkers()
         {
-            return new[]
+            return new IWork[]
             {
-                new RemoveNewLines()
+                new RemoveNewLines(),
+                new TrimSpaces(),
             };
         }
     }
