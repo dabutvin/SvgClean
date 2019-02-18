@@ -10,4 +10,5 @@ A C# dotnet SVG optimizer.
 
 - RemoveNewLines
 - TrimAttributes
+- MinifyStyles
 - TrimSpaces

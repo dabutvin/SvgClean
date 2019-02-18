@@ -1,6 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125.08 165.2">
     <defs>
-        <style>.cls-1,.cls-2{fill:none;stroke:#438977;stroke-miterlimit:10;}.cls-1{stroke-width:5px;}.cls-2{stroke-linecap:round;stroke-width:3px;}.cls-3{fill:#438977;}</style>
+        <style>
+            .cls-1, .cls-2 {
+                fill:none;
+                stroke:#438977;
+                stroke-miterlimit:10;
+            }
+
+            .cls-1 {
+                stroke-width:5px;
+            }
+
+            .cls-2 {
+                stroke-linecap:round;
+                stroke-width:3px;
+            }
+
+            .cls-3 {
+                fill:#438977;
+            }
+        </style>
     </defs>
     <title>imgboticon</title>
     <g id="Layer_2" data-name="Layer 2">
