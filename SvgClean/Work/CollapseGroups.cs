@@ -18,40 +18,20 @@ namespace SvgClean.Work
             var result = Regex.Replace(input, @"<g>\s*<\/g>", "", RegexOptions.Compiled);
 
             var parser = new HtmlParser();
-            var document = parser.ParseDocument(result);
-            var svg = document.GetElementsByTagName("svg")[0];
+            var document = parser.ParseDocument(result).GetElementsByTagName("svg")[0];
 
-            foreach (var child in svg.Children)
+            var group = document.QuerySelectorAll("g").FirstOrDefault(x => x.ChildElementCount == 1 || x.Attributes.Length == 0);
+            while (group != null)
             {
-                ProcessElement(child);
-            }
-
-            return svg.ToSvgString();
-        }
-
-        private void ProcessElement(IElement element)
-        {
-            if (element.TagName == "g" && element.ChildElementCount == 1)
-            {
-                // this is a group of one item, let's apply attributes to the child
-                foreach (var attribute in element.Attributes)
+                foreach (var attribute in group.Attributes)
                 {
-                    if (!element.FirstElementChild.HasAttribute(attribute.Name))
-                    {
-                        element.FirstElementChild.SetAttribute(attribute.Name, attribute.Value);
-                    }
+                    group.FirstElementChild.SetAttribute(attribute.Name, attribute.Value);
                 }
+                group.Replace(group.Children.ToArray());
+                group = document.QuerySelectorAll("g").FirstOrDefault(x => x.ChildElementCount == 1 || x.Attributes.Length == 0);
+            }
 
-                element.OuterHtml = element.FirstElementChild.ToSvgString();
-                //ProcessElement(element);
-            }
-            else
-            {
-                foreach (var child in element.Children)
-                {
-                    ProcessElement(child);
-                }
-            }
+            return document.ToSvgString();
         }
     }
 }
