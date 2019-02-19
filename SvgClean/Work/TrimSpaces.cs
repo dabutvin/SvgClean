@@ -15,6 +15,7 @@ namespace SvgClean.Work
             var result = Regex.Replace(input, @"[\s]+", " ", RegexOptions.Compiled);
             result = Regex.Replace(result, @"(?<=>)[\s]+", "", RegexOptions.Compiled);
             result = Regex.Replace(result, @"\s+(?=\/>|>)", "", RegexOptions.Compiled);
+            result = Regex.Replace(result, @"(?<=."")(?=\w+="")", " ", RegexOptions.Compiled); // correct attr spacing
             return result.Trim();
         }
     }
