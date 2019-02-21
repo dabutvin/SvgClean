@@ -1,5 +1,5 @@
-workflow "PRs" {
-  on = "pull_request"
+workflow "CI" {
+  on = "push"
   resolves = ["dotnet test"]
 }
 
