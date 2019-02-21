@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>SvgClean</PackageId>
+    <PackageVersion>0.1.0</PackageVersion>
+    <Authors>dabutvin</Authors>
+    <PackageDescription>[WIP] a dotnet library for optimizing SVG files</PackageDescription>
+    <PackageProjectUrl>https://github.com/dabutvin/SvgClean</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/dabutvin/SvgClean</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>svg</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
