@@ -37,6 +37,7 @@ namespace SvgClean
                 new RemoveNewLines(),
                 new RemoveComments(),
                 new RemoveMetadata(),
+                new RemoveEmptyText(),
                 new CollapseGroups(),
                 new MinifyStyles(),
                 new TrimAttributes(),
