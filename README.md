@@ -12,6 +12,7 @@ A C# dotnet SVG optimizer.
 - RemoveComments
 - RemoveMetadata
 - RemoveEmptyText
+- RemoveHiddenElements
 - RemoveExtraNamespaces( todo: xmlns:junk can be removed if junk is not svg or xlink or missing)
 - RemoveNonInheritableGroupAttributes (todo: if a `<g>` has an attribute that cannot be inherited, then we don't need it)
 - RemoveNonSvgTags (todo: there are a finite set of svg tags that are valid)
