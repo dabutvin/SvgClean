@@ -10,10 +10,10 @@ namespace Test
         [TestMethod]
         public void GivenSimpleSvg_ShouldOptimizeUsingDefaults()
         {
-            var input = "<!-- Generator: Adobe Illustrator 15.0.0, SVG Export --><svg  xmlns=\"http://www.w3.org/2000/svg\" \n viewBox=\"0 0 12 16\">\n<path nothing=\"\" d=\"M5.05.01c.81 2.17.41\">\n</path>\n   </svg>    \n\n  ";
+            var input = "<!-- Generator: Adobe Illustrator 15.0.0, SVG Export --><svg  xmlns=\"http://www.w3.org/2000/svg\" \n viewBox=\"0 0 12 16\">\n<path nothing=\"\" d=\"M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z\">\n</path>\n   </svg>    \n\n  ";
             var svgOptimizer = new SvgOptimizer();
             var output = svgOptimizer.Optimize(input);
-            Assert.AreEqual("<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 12 16\"><path d=\"M5.05.01c.81 2.17.41\"></path></svg>", output);
+            Assert.AreEqual("<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 12 16\"><path d=\"M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z\"></path></svg>", output);
         }
 
         [TestMethod]
