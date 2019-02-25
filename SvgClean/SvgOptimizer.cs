@@ -40,6 +40,7 @@ namespace SvgClean
                 new RemoveEmptyText(),
                 new RemoveHiddenElements(),
                 new RemoveEditorJunk(),
+                new TrimDecimals(),
                 new CollapseGroups(),
                 new MinifyStyles(),
                 new TrimAttributes(),
